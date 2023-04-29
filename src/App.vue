@@ -4,10 +4,14 @@
     <div></div>
     
     <div id="nav">
-      <router-link to="/">搜索图片</router-link> |
-      <router-link to="/about">我的收藏</router-link>
+      <router-link to="/">Image Search</router-link> |
+      <router-link to="/about">My Favourite</router-link>
     </div>
-    <router-view/>
+    <!-- <router-view/> -->
+    <keep-alive>
+        <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive" />
   </div>
 </template>
 

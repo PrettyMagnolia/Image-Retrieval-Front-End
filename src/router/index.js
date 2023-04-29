@@ -8,7 +8,10 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Search',
-    component: Search
+    component: Search,
+    meta:{
+      keepAlive:true
+    }
   },
   {
     path: '/about',
